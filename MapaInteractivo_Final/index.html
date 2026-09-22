@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa interactivo de mi zona</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>MAPA DEL TESORO</h1>
+    <p>Selecciona una ubicación para ver su imagen.</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="leyenda" aria-label="Ubicaciones">
+      <button class="filtro verde" data-target="mina">● Mina San Agustín</button>
+      <button class="filtro morado" data-target="simon">● Simón Sarlata</button>
+      <button class="filtro rosa" data-target="parque">● Parque Ignacio</button>
+      <button class="filtro blanco" data-target="casa">● Casa</button>
+    </section>
+
+    <section class="mapa-contenedor" aria-label="Mapa interactivo">
+      <img src="mapa.jpeg" id="mapa" alt="Mapa general de la zona">
+      <button class="marcador mina" data-target="mina" aria-label="Mina San Agustín"><span></span><strong>Mina San Agustín</strong></button>
+      <button class="marcador simon" data-target="simon" aria-label="Simón Sarlata"><span></span><strong>Simón Sarlata</strong></button>
+      <button class="marcador parque" data-target="parque" aria-label="Parque Ignacio"><span></span><strong>Parque Ignacio</strong></button>
+      <button class="marcador casa" data-target="casa" aria-label="Casa"><span></span><strong>Casa</strong></button>
+    </section>
+    <p class="ayuda">También puedes tocar los botones de colores.</p>
+  </main>
+
+  <div class="modal oculto" id="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
+    <div class="modal-contenido">
+      <button class="cerrar" id="cerrar" aria-label="Cerrar">×</button>
+      <h2 id="titulo-modal"></h2>
+      <p id="descripcion"></p>
+      <div class="imagen-lugar">
+        <img id="imagenLugar" src="" alt="Imagen de la ubicación seleccionada">
+      </div>
+      <button class="regresar" id="regresar">Regresar al mapa completo</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
